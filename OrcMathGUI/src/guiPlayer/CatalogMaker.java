@@ -14,6 +14,7 @@ public class CatalogMaker {
 
 	private ArrayList<Book> catalog;
 
+	
 	public CatalogMaker() {
 		//instantiate the catalog
 		catalog = new ArrayList<Book>();
