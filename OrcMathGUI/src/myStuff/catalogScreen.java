@@ -33,8 +33,10 @@ public class catalogScreen extends FullFunctionScreen{
 		catalog = new CatalogMaker();
 		title = new TextField(40,40,200,30,"Relapse","Title");
 		viewObjects.add(title);
-		anima = new TextField(40,100,200,50,"Eminem","Artist");
+		anima = new TextField(40,100,200,30,"Eminem","Artist");
 		viewObjects.add(anima);
+		ta = new TextArea(300,150,100,100,"");
+		viewObjects.add(ta);
 		add = new Button(40,150,100,200,"Add",new Action() {
 			
 			@Override
@@ -42,14 +44,13 @@ public class catalogScreen extends FullFunctionScreen{
 				addButtonClicked();
 			}
 		});
-		ta = new TextArea(300,150,100,100,"Ting");
-		viewObjects.add(ta);
 		viewObjects.add(add);
 	}
 
 	protected void addButtonClicked() {
 		CDs album = new CDs(title.getText(), anima.getText());
 		String s = ta.getText() + album + "\n";
+		ta.setText(s);
 		catalog.addNewItem(title.getText(),anima.getText());
 		title.setText("");
 		anima.setText("");
